@@ -1,0 +1,244 @@
+<div id="extBox" class="!font-sans flex flex-col gap-6 bg-gray-50 p-6 mb-5">
+    <div class="!flex w-full justify-between items-center mb-4">
+        <div class="text-purple-800 my-1 font-medium text-3xl">Your Ultimate CGPA Analysis</div>
+        <button id="closeBtn">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-end text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-width="4" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+        </button>
+
+    </div>
+    
+    <!-- Analysis Wrapper -->
+    <div id="analysisWrapper" class="flex flex-col gap-6 mb-5">
+
+        <!-- first row of main box -->
+        <div class="w-full flex gap-8">
+
+            <div class="w-1/6 bg-purple-100 rounded-xl p-4 flex flex-col items-center justify-center">
+                <div id="overallCgpa" class="flex text-6xl font-medium mb-4 text-purple-900 items-center justify-center"></div>
+                <div class="font-medium text-2xl text-purple-700">Overall CGPA</div>
+            </div>
+
+            <div class="w-1/4 flex flex-col gap-4">
+                <div class="text-purple-900 ml-2 font-medium text-2xl">Course Summary:</div>
+                <div class="bg-white flex justify-between shadow p-2 rounded-xl">
+                    <div class="w-1/3 flex-col flex justify-center items-center border-r border-gray-200">
+                        <div id="totalCourses" class="font-medium flex text-4xl">46</div>
+                        <div class="font-medium flex flex-col text-xl justify-center items-center text-center">Total courses</div>
+                    </div>
+                    <div class="w-2/3 p-2 ml-2 flex flex-col gap-2">
+                        <div id="totalCreditAttended" class="font-medium text-xl">Total Credit Attended: </div>
+                        <div id="totalTheoryCourses" class="font-medium text-xl">Total Thory Courses: </div>
+                        <div id="totalLabCourses" class="font-medium text-xl">Total Lab Courses: </div>
+                    </div>
+                </div>
+
+                <div class="w-full h-full grid grid-cols-2 gap-2">
+                    <div class="flex flex-col rounded-xl py-4 bg-green-100 justify-center items-center">
+                        <div id="clearedCourses" class="font-medium text-2xl text-green-900"></div>
+                        <div class="font-medium text-xl text-green-700 text-center">Cleared Subjects</div>
+                    </div>
+
+                    <div class="flex flex-col rounded-xl py-4 bg-red-100 justify-center items-center">
+                        <div id="shortCourses" class="font-medium text-2xl text-red-900"></div>
+                        <div class="font-medium text-xl text-red-700 text-center">Short Subjects</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="w-1/4 flex flex-col gap-4">
+                <div id="lastTermResultHeading" class="text-purple-900 ml-2 font-medium text-2xl">Last Term Result:</div>
+                <div class="bg-white h-full rounded-xl shadow flex">
+                    <div id="lastTermResultTheory" class="w-1/2 border-r border-gray-100 p-3">
+                        <div  class="flex justify-center text-xl border-b border-gray-200 font-medium ">Theory</div>
+                        <div class="text-xl flex flex-col p-4 justify-center items-center gap-1"></div>
+                    </div>
+
+                    <div id="lastTermResultLab" class="w-1/2 border-r border-gray-100 p-3">
+                        <div  class="flex justify-center text-xl border-b border-gray-200 font-medium ">Sessional</div>
+                        <div class="text-xl flex flex-col p-4 justify-center items-center gap-1"></div>
+                    </div>
+
+                </div>
+            </div>
+                
+
+            <div class="w-2/6">
+                <div class="text-purple-900 mb-4 ml-2 font-medium text-2xl">Term-wise Result:</div>
+                <div id="termWiseResultBox" class="grid grid-cols-5 gap-2"></div>
+            </div>
+            
+        </div>
+
+
+        <!-- second row of main box -->
+        <div class="w-full flex gap-12">
+
+            <div class="w-1/3 flex flex-col gap-4">
+                <div class="text-purple-900 ml-2 font-medium text-2xl">Theory Course Grades: </div>
+                <div id="theoryCourseGradeBox" class="grid grid-cols-5 gap-4">
+                    <!-- <div class="bg-white flex rounded-xl shadow p-2 justify-center items-center"><div class="font-medium text-2xl border-r border-gray-200 p-4">A+</div><div class="p-4 text-2xl">14</div></div> -->
+                </div>
+                
+                <div class="text-purple-900 ml-2 font-medium text-2xl">Sessional Course Grades: </div>
+                <div id="sessionalCourseGradeBox" class="grid grid-cols-5 gap-4"></div>
+            </div>
+
+            <!-- graph -->
+            <div class="w-1/3 flex flex-col gap-4">
+                <div class="text-purple-900 ml-2 font-medium text-2xl">CGPA Vs. Level-Term Graph:</div>
+                <canvas id="myChart" class="w-full  bg-white rounded-xl shadow p-4 !font-medium"></canvas>
+            </div>
+
+            <div class="w-1/3 h-1/2 flex flex-col gap-4">
+
+                <!-- Targated Cgpa Calculator -->
+                <div class="text-purple-900 ml-2 font-medium text-2xl">Target CGPA Calculator:</div>
+                <div class="bg-white p-4 py-6 flex flex-col gap-4 rounded-xl shadow">
+                    
+                    <div class="grid grid-cols-2 gap-2 h-1/2">
+                        <input 
+                            type="number" 
+                            id="targetCgpa"
+                            placeholder="Target CGPA"
+                            class="border border-gray-300 rounded-xl h-full p-4 text-xl"
+                        />
+
+                        <input 
+                            type="number" 
+                            id="nextTermCredit" 
+                            placeholder="Next-Term Credits"
+                            class="border border-gray-300 rounded-xl h-full p-4 text-xl"
+                        />
+                    </div>
+
+                    <div class="px-4 text-center text-gray-500"> *If unknown, leave next-term credits empty to use the average.</div>
+
+                    <div id="nextTermCgpaContainer" class="hidden p-4 flex justify-center gap-2 items-center bg-purple-100 text-purple-500 rounded-xl text-2xl">
+                        Your Next Term CGPA Should Be:<div id="nextTermCgpa" class="text-purple-700 text-2xl">3.55</div>
+                    </div>
+
+                    <div class="flex justify-center items-center h-1/2">
+                        <button id="targetCgpaBtn" class="bg-purple-600 !text-white justify-center !font-medium !text-2xl transition hover:bg-purple-700 rounded-xl w-2/4 p-5">Calculate</button>
+                    </div>
+                </div>
+
+
+
+                <!-- What if calculator -->
+                <div class="text-purple-900 ml-2 font-medium text-2xl">What if CGPA Calculator: </div>
+                <div id="whatifMainContainer" class="bg-white p-4 py-6 flex flex-col gap-4 rounded-xl shadow">
+                    
+                    <div id="whatifFieldContainer" class="flex flex-col gap-6">
+                        <!-- <div class="grid grid-cols-2 gap-2 h-1/2">
+
+                            <select placeholder="Target CGPA" class="border border-gray-300 rounded-xl h-full p-4 text-xl">
+                                <option disabled selected>Choose One</option>
+                                <option value="c1">Choice 1</option>
+                                <option value="c2">Choice 2</option>
+                            </select>
+
+                            <select placeholder="Target CGPA" class="border border-gray-300 rounded-xl h-full p-4 text-xl">
+                                <option disabled selected>Choose One</option>
+                                <option value="c1">Choice 1</option>
+                                <option value="c2">Choice 2</option>
+                            </select>
+
+                        </div> -->
+
+                        <!-- <div class="flex gap-2 h-1/2 justify-between">
+
+                            <select class="border w-8/18 border-gray-300 rounded-xl h-full p-4 text-xl">
+                                <option disabled selected>Choose One</option>
+                                <option value="c1">Choice 1</option>
+                                <option value="c2">Choice 2</option>
+                            </select>
+
+                            <select class="border w-8/18 border-gray-300 rounded-xl h-full p-4 text-xl">
+                                <option disabled selected>Choose One</option>
+                                <option value="c1">Choice 1</option>
+                                <option value="c2">Choice 2</option>
+                            </select>
+
+                            <button class="w-2/18 flex justify-center items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-width="3" d="M5 12h14" />
+                                </svg>
+                            </button>
+
+                        </div> -->
+
+                    </div>
+
+
+                    <button id="addWhatifField" class="font-medium text-2xl !text-purple-500 transition hover:!text-purple-600">Add More</button>
+
+
+
+                    <div id="whatifOverallCgpaContainer" class="hidden p-4 flex justify-center gap-2 items-center bg-purple-100 text-purple-500 rounded-xl text-2xl">
+                        Your overall CGPA would be:<div id="modifiedCgpa" class="text-purple-700 text-2xl">3.55</div>
+                    </div>
+
+                    <div id="invalidWhatifOverallCgpaContainer" class="hidden p-4 flex justify-center gap-2 items-center bg-red-200 text-red-600 rounded-xl text-2xl">
+                        Invalid Subject or Grade...
+                    </div>
+
+                    <div class="flex justify-center items-center h-1/2">
+                        <button id="whatifCalcBtn" class="bg-purple-600 !text-white justify-center !font-medium !text-2xl transition hover:bg-purple-700 rounded-xl w-2/4 p-5">Calculate</button>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- Developer credit row -->
+        <div class="flex justify-center items-center gap-2">
+            <div class="text-xl text-purple-500">Developed By </div>
+            <div class="text-xl text-purple-700 font-medium">Suez Sohan (ME'20 CUET) |</div>
+            <button id="gotoDeveloperPage" class="!text-xl !text-purple-500 hover:!text-purple-700">See More...</button>
+        </div>
+
+     </div>
+    
+
+    <!-- Error Wrapper -->
+     <div id="errorWrapper" class="hidden">
+        <div id="errorMessage" class="flex justify-center items-center text-8xl font-medium p-8">No Data Availabe!</div>
+     </div>
+
+
+     <!-- developer Page -->
+      <div id="developerPageWrapper" class="mx-auto hidden">
+        <div class="flex p-6 justify-center items-center gap-6">
+            <div id="developerImgElem" class="flex justify-center items-center"></div>
+
+            <div class="flex flex-col w-180 text-gray-600 gap-6">
+                <div class="bg-white shadow p-4 text-2xl flex flex-col gap-2 font-medium rounded-xl">
+                    <div class="flex gap-2">Developed By: <div class="text-gray-700">Suez Sohan</div></div>
+                    <div>Batch: ME'20</div>
+                    <div>Email: swez.sohan@gmail.com</div>
+                    <div>WhatsApp: 01991642680</div>
+                    <div>Department of Mechanical Engineering</div>
+                    <div>Chittagong University of Engineering and Technology</div>
+                    <div class="flex gap-4">
+                        <a href="https://www.linkedin.com/in/md-suez" class="fa fa-linkedin !text-purple-600 transition hover:!text-purple-800"></a>
+                        <a href="https://github.com/StayTunedWithSuez" class="fa fa-github !text-purple-600 transition hover:!text-purple-800"></a>
+                        <a href="https://www.facebook.com/swez.sohan" class="fa fa-facebook !text-purple-600 transition hover:!text-purple-800"></a>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center items-center">
+                    <button id="goBackFromDeveloper" class="bg-purple-600 transition hover:bg-purple-700 p-4 !text-white !text-2xl !font-medium w-50 rounded">Go back</button>
+                </div>
+            </div>
+        </div>
+
+        
+
+      </div>
+
+</div>

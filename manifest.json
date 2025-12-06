@@ -1,0 +1,43 @@
+{
+  "name": "CGPA Master - CUET",
+  "description": "A smart CGPA analyzer for CUET students that calculates CGPA, analyzes results, predicts target CGPA, computes what-if scenarios for improvement exams, and visualizes academic progress.",
+  "version": "1.0.0",
+  "manifest_version": 3,
+
+  "permissions": ["tabs"],
+
+  "host_permissions": [
+    "https://course.cuet.ac.bd/*"
+  ],
+
+
+  "action": {
+    "default_icon": {
+      "16": "images/icon-16.png",
+      "48": "images/icon-48.png",
+      "128": "images/icon-128.png"
+    }
+  },
+
+  "icons": {
+    "16": "images/icon-16.png",
+    "48": "images/icon-48.png",
+    "128": "images/icon-128.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://course.cuet.ac.bd/result_published.php"],
+      "js": ["functions.js", "content.js", "chart.umd.js"],
+      "css": ["output.css"]
+    }
+  ],
+
+  "web_accessible_resources": [
+    {
+      "resources": ["insert.html", "images/*"],
+      "matches": ["https://course.cuet.ac.bd/*"]
+    }
+  ]
+
+}
