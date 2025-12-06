@@ -80,7 +80,7 @@ async function mainCalculation() {
                 courseCredit: 3,
                 courseType: "regular",
                 gradePoint: 3.25,
-                letterGrade: "B+",
+                letterGrade: "B",
                 level: 1,
                 sessional: "No",
                 term: 2
