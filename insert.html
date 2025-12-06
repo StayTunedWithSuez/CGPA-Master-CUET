@@ -1,11 +1,16 @@
-<div id="extBox" class="!font-sans flex flex-col gap-6 bg-gray-50 p-6 mb-5">
+<div id="extBox" class="hidden !font-sans flex flex-col gap-6 bg-gray-50 p-6 mb-5">
     <div class="!flex w-full justify-between items-center mb-4">
         <div class="text-purple-800 my-1 font-medium text-3xl">Your Ultimate CGPA Analysis</div>
-        <button id="closeBtn">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-end text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-width="4" d="M6 18L18 6M6 6l12 12"/>
-            </svg>
-        </button>
+
+        <div class="flex gap-5 justify-center items-center">
+            <div class="text-purple-800 my-1 font-medium text-xl"><a class="!text-purple-600 transition hover:!text-purple-800" href="https://github.com/StayTunedWithSuez/CGPA-Master-CUET/tree/release" target="_blank" rel="noopener noreferrer">Check for Updates </a>(Current: v1.0.0)</div>
+
+            <button id="closeBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-end text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-width="4" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
 
     </div>
     
@@ -116,7 +121,7 @@
                     <div class="px-4 text-center text-gray-500"> *If unknown, leave next-term credits empty to use the average.</div>
 
                     <div id="nextTermCgpaContainer" class="hidden p-4 flex justify-center gap-2 items-center bg-purple-100 text-purple-500 rounded-xl text-2xl">
-                        Your Next Term CGPA Should Be:<div id="nextTermCgpa" class="text-purple-700 text-2xl">3.55</div>
+                        Required next-term CGPA:<div id="nextTermCgpa" class="text-purple-700 text-2xl">3.55</div>
                     </div>
 
                     <div class="flex justify-center items-center h-1/2">
@@ -177,7 +182,7 @@
 
 
                     <div id="whatifOverallCgpaContainer" class="hidden p-4 flex justify-center gap-2 items-center bg-purple-100 text-purple-500 rounded-xl text-2xl">
-                        Your overall CGPA would be:<div id="modifiedCgpa" class="text-purple-700 text-2xl">3.55</div>
+                        Overall CGPA (After Changes):<div id="modifiedCgpa" class="text-purple-700 text-2xl">3.55</div>
                     </div>
 
                     <div id="invalidWhatifOverallCgpaContainer" class="hidden p-4 flex justify-center gap-2 items-center bg-red-200 text-red-600 rounded-xl text-2xl">
@@ -197,9 +202,9 @@
 
         <!-- Developer credit row -->
         <div class="flex justify-center items-center gap-2">
-            <div class="text-xl text-purple-500">Developed By </div>
-            <div class="text-xl text-purple-700 font-medium">Suez Sohan (ME'20 CUET) |</div>
-            <button id="gotoDeveloperPage" class="!text-xl !text-purple-500 hover:!text-purple-700">See More...</button>
+            <div class="text-xl text-purple-500">Developed by </div>
+            <div class="text-xl text-purple-700 font-medium">Suez Sohan (ME'20, CUET)</div>
+            <button id="gotoDeveloperPage" class="!text-xl !text-purple-500 hover:!text-purple-700">| See More...</button>
         </div>
 
      </div>
@@ -207,7 +212,7 @@
 
     <!-- Error Wrapper -->
      <div id="errorWrapper" class="hidden">
-        <div id="errorMessage" class="flex justify-center items-center text-8xl font-medium p-8">No Data Availabe!</div>
+        <div id="errorMessage" class="flex justify-center items-center text-8xl font-medium p-8 mb-10">No Data Availabe!</div>
      </div>
 
 
@@ -217,14 +222,13 @@
             <div id="developerImgElem" class="flex justify-center items-center"></div>
 
             <div class="flex flex-col w-180 text-gray-600 gap-6">
-                <div class="bg-white shadow p-4 text-2xl flex flex-col gap-2 font-medium rounded-xl">
-                    <div class="flex gap-2">Developed By: <div class="text-gray-700">Suez Sohan</div></div>
-                    <div>Batch: ME'20</div>
-                    <div>Email: swez.sohan@gmail.com</div>
-                    <div>WhatsApp: 01991642680</div>
+                <div class="bg-white shadow p-4 py-6 pl-6 text-2xl flex flex-col gap-2 rounded-xl">
+                    <div class="flex gap-2">Developed By: <div class="text-purple-700 font-medium">Suez Sohan (ME'20)</div></div>
+                    <div>Email: <a href="mailto:swez.sohan@gmail.com">swez.sohan@gmail.com</a></div>
+                    <div>WhatsApp: <a href="https://wa.me/8801991642680" target="_blank">+8801991642680</a></div>
                     <div>Department of Mechanical Engineering</div>
                     <div>Chittagong University of Engineering and Technology</div>
-                    <div class="flex gap-4">
+                    <div class="flex gap-8 p-4 justify-center items-center">
                         <a href="https://www.linkedin.com/in/md-suez" class="fa fa-linkedin !text-purple-600 transition hover:!text-purple-800"></a>
                         <a href="https://github.com/StayTunedWithSuez" class="fa fa-github !text-purple-600 transition hover:!text-purple-800"></a>
                         <a href="https://www.facebook.com/swez.sohan" class="fa fa-facebook !text-purple-600 transition hover:!text-purple-800"></a>

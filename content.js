@@ -1,7 +1,7 @@
 //Calculate button
 const mainButton = document.createElement("div");
 mainButton.id = "myExtensionRoot";
-mainButton.innerHTML = '<div class = "flex justify-center items-center"><button id="calculateBtn" class="flex justify-center !mx-auto !cursor-pointer !bg-purple-600 !text-white !text-3xl !font-sans !p-5 !font-medium !rounded-xl shadow hover:!bg-purple-700 !transition !duration-200">Calculate CGPA</div></button>'
+mainButton.innerHTML = '<div class = "flex justify-center items-center"><button id="calculateBtn" class="flex justify-center !mx-auto !cursor-pointer !bg-purple-600 !text-white !text-3xl !font-sans !p-5 !px-6 !font-medium !rounded-xl shadow drop-shadow-md hover:!bg-purple-700 !transition !duration-200">Analyze Your CGPA</div></button>'
 const getTopMenu = document.getElementsByClassName("top-nav");
 getTopMenu[0].appendChild(mainButton);
 
@@ -79,8 +79,8 @@ async function mainCalculation() {
                 courseCode: "Math133",
                 courseCredit: 3,
                 courseType: "regular",
-                gradePoint: 3.25,
-                letterGrade: "B+",
+                gradePoint: 0,
+                letterGrade: "F",
                 level: 1,
                 sessional: "No",
                 term: 2
