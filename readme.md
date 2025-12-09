@@ -15,6 +15,10 @@ Download CGPA Master - CUET:
 7. The extension will appear in the list—turn it on if it is off.  
 8. Visit the CUET result publishing site, and you will see a new button named **"Analyze Your Result"**. Click it and enjoy!
 
+
+[![Watch the video tutorial](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://youtu.be/ilF6TlR62R0?si=H0r_5KwS4Trdj4AM)
+
+
 ## About this Extension
 
 **CGPA Master - CUET** is a Chrome extension for students of **Chittagong University of Engineering and Technology (CUET)**. It allows complete result analysis directly on the CUET main result website.
