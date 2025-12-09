@@ -365,11 +365,11 @@ function creatingFieldForWhatifContainer(allData) {
 
 
     const removeBtn = document.createElement("button");
-    removeBtn.className = "w-2/18 flex justify-center items-center";
+    removeBtn.className = " flex w-[10%] justify-center items-center !text-gray-500 transition hover:!text-red-500";
     removeBtn.innerHTML = `
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-width="3" d="M5 12h14" />
-        </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-width="3" d="M5 12h14" />
+            </svg>
     `;
 
     removeBtn.addEventListener("click", () => {
@@ -383,7 +383,7 @@ function creatingFieldForWhatifContainer(allData) {
     })
 
     const select1 = document.createElement("select");
-    select1.className = "border w-8/18 border-gray-300 rounded-xl h-full p-4 text-xl"
+    select1.className = "border w-[45%] border-gray-300 rounded-xl h-full p-4 text-xl"
 
     const optionFieldSelected = document.createElement("option");
     optionFieldSelected.innerText = "Select a subject ...";
@@ -391,7 +391,7 @@ function creatingFieldForWhatifContainer(allData) {
     select1.appendChild(optionFieldSelected);
 
     const select2 = document.createElement("select");
-    select2.className = "border w-8/18 border-gray-300 rounded-xl h-full p-4 text-xl"
+    select2.className = "border w-[45%] border-gray-300 rounded-xl h-full p-4 text-xl"
 
     const gradeOptionFieldSelected = document.createElement("option");
     gradeOptionFieldSelected.innerText = "What if grade...";
