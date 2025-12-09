@@ -17,8 +17,7 @@ Download the extension from the GitHub Release:
 
 ## About this Extension
 
-**CGPA Master - CUET** is a Chrome extension for students of **Chittagong University of Engineering and Technology (CUET)**.  
-It allows complete result analysis directly on the CUET main result website.
+**CGPA Master - CUET** is a Chrome extension for students of **Chittagong University of Engineering and Technology (CUET)**. It allows complete result analysis directly on the CUET main result website.
 
 ### Features
 - Calculate **overall CGPA**
