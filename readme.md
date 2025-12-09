@@ -15,7 +15,7 @@ Download CGPA Master - CUET:
 7. The extension will appear in the list—turn it on if it is off.  
 8. Visit the CUET result publishing site, and you will see a new button named **"Analyze Your Result"**. Click it and enjoy!
 
-
+### Click below to watch the video tutorial
 [![Watch the video tutorial](https://img.youtube.com/vi/ilF6TlR62R0/0.jpg)](https://youtu.be/ilF6TlR62R0?si=H0r_5KwS4Trdj4AM)
 
 
