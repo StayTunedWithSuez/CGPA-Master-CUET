@@ -1,8 +1,8 @@
-# CGPA Master - CUET (v1.0.0)
+# CGPA Master - CUET
 
 ## Download
-Download the extension from the GitHub Release:  
-[CGPA Master - CUET v1.0.0](https://github.com/StayTunedWithSuez/CGPA-Master-CUET/releases/download/v1.0.0/CGPA-Master-CUET.v1.0.0.zip)
+Download CGPA Master - CUET:
+- v1.0.0 (Latest) - [Download (Recommended)](https://github.com/StayTunedWithSuez/CGPA-Master-CUET/releases/download/v1.0.0/CGPA-Master-CUET.v1.0.0.zip)
 
 ## Installation Guide
 
