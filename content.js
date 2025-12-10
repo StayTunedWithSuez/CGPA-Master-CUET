@@ -21,7 +21,7 @@ getTableLengthOptions[3].dispatchEvent(new Event("change", { bubbles: true }));
 
 
 //Getting table data
-let allData = [];
+let primaryAllData = [];
 const getTable = document.getElementsByTagName("tbody")[0];
 const getTr = getTable.querySelectorAll("tr");
 
@@ -30,7 +30,7 @@ getTr.forEach((tr) => {
     const {level, term} = parseLevelTerm(td[2].innerText.trim());
     const gradePoint = letterToGradePoint(td[4].innerText.trim());
 
-    allData.push({
+    primaryAllData.push({
         courseCode : td[0].innerText.trim(),
         courseCredit : Number(td[1].innerText.trim()),
         sessional : td[3].innerText.trim(),
@@ -43,6 +43,14 @@ getTr.forEach((tr) => {
     })
 
 });
+
+
+//Dummy Data Checking (if needed)
+//primaryAllData = dummyData();
+//console.log(primaryAllData);
+
+//Filtering table data
+const allData = getHighestGradeCourses(primaryAllData);
 
 
 //Main function
@@ -62,32 +70,8 @@ async function mainCalculation() {
             extBox.classList.add("hidden");
         })
 
+        
 
-        //Checking data Availability
-        /* allData = [
-            {
-                courseCode: "Hum 131",
-                courseCredit: 3,
-                courseType: "regular",
-                gradePoint: 2.75,
-                letterGrade: "B-",
-                level: 1,
-                sessional: "No",
-                term: 1
-            },
-            {
-                courseCode: "Math133",
-                courseCredit: 3,
-                courseType: "regular",
-                gradePoint: 0,
-                letterGrade: "F",
-                level: 1,
-                sessional: "No",
-                term: 2
-            }
-
-        ]; */
-        //allData = [];
         if(!allData || allData.length === 0) {
             const errorWrapper = document.getElementById("errorWrapper");
             const analysisWrapper = document.getElementById("analysisWrapper");

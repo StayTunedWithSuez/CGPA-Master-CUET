@@ -1,3 +1,131 @@
+//Dummy data set
+function dummyData() {
+    const allData = [
+        {
+            courseCode: "Hum 131",
+            courseCredit: 3,
+            courseType: "regular",
+            gradePoint: 2.75,
+            letterGrade: "B-",
+            level: 1,
+            sessional: "No",
+            term: 1
+        },
+        {
+            courseCode: "Math 133",
+            courseCredit: 3,
+            courseType: "regular",
+            gradePoint: 3.50,
+            letterGrade: "A-",
+            level: 1,
+            sessional: "No",
+            term: 1
+        },
+
+        {
+            courseCode: "Hum 131",
+            courseCredit: 3,
+            courseType: "regular",
+            gradePoint: 4.00,
+            letterGrade: "A+",
+            level: 1,
+            sessional: "No",
+            term: 1
+        },
+        {
+            courseCode: "Phy 145",
+            courseCredit: 3,
+            courseType: "regular",
+            gradePoint: 3.75,
+            letterGrade: "A",
+            level: 1,
+            sessional: "No",
+            term: 2
+        },
+        {
+            courseCode: "Chem 141",
+            courseCredit: 3,
+            courseType: "regular",
+            gradePoint: 2.25,
+            letterGrade: "C+",
+            level: 1,
+            sessional: "No",
+            term: 2
+        },
+        {
+            courseCode: "ME 160",
+            courseCredit: 1.5,
+            courseType: "sessional",
+            gradePoint: 4.00,
+            letterGrade: "A+",
+            level: 1,
+            sessional: "Yes",
+            term: 1
+        },
+
+        {
+            courseCode: "Hum 131",
+            courseCredit: 3,
+            courseType: "regular",
+            gradePoint: 0.00,
+            letterGrade: "F",
+            level: 1,
+            sessional: "No",
+            term: 1
+        },
+        {
+            courseCode: "EEE 165",
+            courseCredit: 1.5,
+            courseType: "sessional",
+            gradePoint: 3.25,
+            letterGrade: "B+",
+            level: 1,
+            sessional: "Yes",
+            term: 2
+        },
+        {
+            courseCode: "CE 170",
+            courseCredit: 3,
+            courseType: "regular",
+            gradePoint: 0.00,
+            letterGrade: "F",
+            level: 2,
+            sessional: "No",
+            term: 1
+        },
+
+        {
+            courseCode: "CE 170",
+            courseCredit: 3,
+            courseType: "regular",
+            gradePoint: 0.00,
+            letterGrade: "A+",
+            level: 2,
+            sessional: "No",
+            term: 1
+        }
+    ];
+
+    return allData;
+
+}
+
+
+//Unique courseCode filtering with relatively highest CGPA
+function getHighestGradeCourses(allData) {
+    const map = {};
+
+    for (const item of allData) {
+        const code = item.courseCode;
+
+        if (!map[code] || item.gradePoint > map[code].gradePoint) {
+            map[code] = item;
+        }
+    }
+
+    return Object.values(map);
+}
+
 
 
 //perse level and term
@@ -81,28 +209,31 @@ async function insertExternalHtml() {
 }
 
 //Term Wise Result
-function termWiseResult(allData){
+function termWiseResult(allData) {
     let termWiseResultData = [];
-    const allLevels = [...new Set(allData.map((data) => data.level))].sort();
+    const allLevels = [...new Set(allData.map(d => d.level))].sort((a, b) => a - b);
     const terms = [1, 2];
 
     allLevels.forEach((level) => {
         terms.forEach((term) => {
-            const levelTermData = allData.filter((data) => data.level === level && data.term === term );
-            termWiseResultData.push({
-                level: level,
-                term: term,
-                cgpa: calculateCGPA(levelTermData)
-            });
+            const levelTermData = allData.filter(
+                (data) => data.level === level && data.term === term
+            );
 
+            if (levelTermData.length > 0) {
+                termWiseResultData.push({
+                    level: level,
+                    term: term,
+                    cgpa: calculateCGPA(levelTermData)
+                });
+            }
         });
     });
 
     return termWiseResultData;
-
-    
-
 }
+
+
 
 //Show term wise result
 function showTermWiseResult(allData){
