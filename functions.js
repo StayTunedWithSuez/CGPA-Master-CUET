@@ -99,7 +99,7 @@ function dummyData() {
             courseCredit: 3,
             courseType: "regular",
             gradePoint: 0.00,
-            letterGrade: "A+",
+            letterGrade: "F",
             level: 2,
             sessional: "No",
             term: 1
